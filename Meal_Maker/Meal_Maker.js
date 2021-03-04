@@ -1,20 +1,22 @@
 const menu = {
   _courses: {
-    appetizers: {}, 
-    mains: {}, 
-    desserts: {}
+    appetizers: ['some'], 
+    mains: ['stuff'], 
+    desserts: ['is great']
   },
-  get courses(){
-    return{
-      appetizers: this.appetizers, 
-      mains: this.mains, 
-      desserts: this.desserts
-    }
-  }, 
   get appetizers(){
+    return this._courses.appetizers
 
-  }, 
-  set appetizer(appetizerIn){
-    
   },
+  get mains() {
+    return this._courses.mains
+  }, 
+  get desserts(){
+    return this._courses.desserts
+  }
 }
+
+
+
+console.log(menu.desserts)
+
