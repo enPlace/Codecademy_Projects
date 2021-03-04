@@ -1,8 +1,8 @@
 const menu = {
   _courses: {
-    appetizers: ['some'], 
-    mains: ['stuff'], 
-    desserts: ['is great']
+    appetizers: [],
+    mains: [],
+    desserts:[]
   },
   get appetizers(){
     return this._courses.appetizers
@@ -23,12 +23,27 @@ const menu = {
   set mains (mains){
     this._courses.mains = mains
   }, 
-  set desserts (dessserts){
+  set desserts (desserts){
     this._courses.desserts = desserts
-  }
+  },
+   addDishtoCourse(courseType, dishName, dishPrice){ 
+    const dish ={
+      name: dishName, 
+      price: dishPrice
+    };
+    return this._courses[courseType].push(dish)
+
+  },
+
 }
 
 
 
-console.log(menu.courses)
+menu.addDishtoCourse('mains', 'pasta', '$3')
+menu.addDishtoCourse('desserts', 'chocolate cake', '$3.40')
+menu.addDishtoCourse('appetizers', 'amuse bouche', '$2.50')
+menu.addDishtoCourse('mains', 'Veggie Burger', '$5')
+menu.addDishtoCourse('desserts', 'Cheesecake', '$3.40')
+menu.addDishtoCourse('appetizers', 'caviar', '$2.50')
 
+console.log(menu.courses)
