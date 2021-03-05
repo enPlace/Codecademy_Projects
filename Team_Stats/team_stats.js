@@ -43,6 +43,9 @@ const team = {
 	get players(){
 		return this._players
 	}, 
+	get name(){
+		return this._name
+	},
 	addPlayer(firstName, lastName, age){
 		const player = {
 			firstName: firstName, 
@@ -64,3 +67,4 @@ team.addGame ('Los Angeles Clippers', 119, 99)
 console.log(team.games)
 team.addPlayer('Kyle', 'Anderson', 27)
 console.log(team.players)
+console.log(team.name)
