@@ -34,6 +34,13 @@ const menu = {
     return this._courses[courseType].push(dish)
 
   },
+  getRandomDishFromCourse(courseType){    
+    const dishes = this._courses[courseType]; //gives us 
+    const randomIndex = Math.floor(Math.random()* dishes.length); 
+    return dishes[randomIndex]
+
+  }
+  
 
 }
 
