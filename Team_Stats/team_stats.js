@@ -1,25 +1,24 @@
 const team = {
 	_name: 'Memphis Grizzlies',
-	_players: {
-		'Point Guard':{
+	_players: [
+		{
 			firstName: 'Ja',
 			lastName: 'Morant',
 			age: 21
 
 		},
-		Center: {
+		{
 			firstName: 'Jonas', 
 			lastName: 'Valančiūnas',
 			age: 28
 		},
-		'Shooting Guard' : {
+		{
 			firstName: 'Dillon',
 			lastName: 'Brooks',
 			age: 25
-		}
+		}, 
+	], 
 
-
-	},
 	_games: {
 		game1:{
 			opponent: 'Milwaukee Bucks',
@@ -44,7 +43,17 @@ const team = {
 	}, 
 	get players(){
 		return this._players
+	}, 
+	addPlayer(firstName, lastName, age){
+		const player = {
+			firstName: firstName, 
+			lastName: lastName, 
+			age: age
+		}; 
+		return this._players.push(player)
 	}
 }
-console.log(team.players['Point Guard'])
+
 console.log(team.games)
+team.addPlayer('Kyle', 'Anderson', 27)
+console.log(team.players)

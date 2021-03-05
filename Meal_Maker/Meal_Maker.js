@@ -45,7 +45,7 @@ const menu = {
     randomMain = menu.getRandomDishFromCourse('mains')
     randomDessert= menu.getRandomDishFromCourse('desserts')
     totalPrice = randomApp.price + randomMain.price + randomDessert.price
-    return `Welcome to RandomMeals, where you eat what fate tells you! 
+    return `Welcome to Rando Meals, where you eat what fate tells you! 
     Your random appetizer: ${randomApp.name} ($${randomApp.price}).
     Your random main course: ${randomMain.name} ($${randomMain.price}). 
     Your random dessert: ${randomDessert.name} ($${randomDessert.price}).
@@ -53,7 +53,6 @@ const menu = {
     Either way, you have to pay, and your total comes to $${totalPrice}.`
   
 
-}
 } 
 
 
