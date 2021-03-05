@@ -35,22 +35,37 @@ const menu = {
 
   },
   getRandomDishFromCourse(courseType){    
-    const dishes = this._courses[courseType]; //gives us 
-    const randomIndex = Math.floor(Math.random()* dishes.length); 
-    return dishes[randomIndex]
+    const dishes = this._courses[courseType]; //gives us array of dishes from a given course
+    const randomIndex = Math.floor(Math.random()* dishes.length); //random index for the length of array
+    return dishes[randomIndex] //returns a random dish from course 
 
-  }
+  }, 
+  generateRandomMeal(){
+    randomApp = menu.getRandomDishFromCourse('appetizers')
+    randomMain = menu.getRandomDishFromCourse('mains')
+    randomDessert= menu.getRandomDishFromCourse('desserts')
+    totalPrice = randomApp.price + randomMain.price + randomDessert.price
+    return `Welcome to RandomMeals, where you eat what fate tells you! 
+    Your random appetizer: ${randomApp.name} ($${randomApp.price}).
+    Your random main course: ${randomMain.name} ($${randomMain.price}). 
+    Your random dessert: ${randomDessert.name} ($${randomDessert.price}).
+    We hope you like your meal, but if you don't, you can't blame us! 
+    Either way, you have to pay, and your total comes to $${totalPrice}.`
   
 
 }
+} 
 
 
 
-menu.addDishtoCourse('mains', 'pasta', '$3')
-menu.addDishtoCourse('desserts', 'chocolate cake', '$3.40')
-menu.addDishtoCourse('appetizers', 'amuse bouche', '$2.50')
-menu.addDishtoCourse('mains', 'Veggie Burger', '$5')
-menu.addDishtoCourse('desserts', 'Cheesecake', '$3.40')
-menu.addDishtoCourse('appetizers', 'caviar', '$2.50')
+menu.addDishtoCourse('mains', 'pasta', 3.00)
+menu.addDishtoCourse('desserts', 'chocolate cake', 3.40)
+menu.addDishtoCourse('appetizers', 'amuse bouche', 2.50)
+menu.addDishtoCourse('mains', 'Veggie Burger', 5.00)
+menu.addDishtoCourse('desserts', 'Cheesecake', 3.40)
+menu.addDishtoCourse('appetizers', 'caviar', 2.50)
 
 console.log(menu.courses)
+console.log(menu.getRandomDishFromCourse('appetizers'))
+console.log(menu.getRandomDishFromCourse('desserts'))
+console.log(menu.generateRandomMeal())
