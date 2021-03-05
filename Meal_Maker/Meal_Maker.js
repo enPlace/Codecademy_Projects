@@ -40,7 +40,7 @@ const menu = {
     return dishes[randomIndex] //returns a random dish from course 
 
   }, 
-  generateRandomMeal(){
+  generateRandomMeal(){ // generates a random meal with prices for each and a message.
     randomApp = menu.getRandomDishFromCourse('appetizers')
     randomMain = menu.getRandomDishFromCourse('mains')
     randomDessert= menu.getRandomDishFromCourse('desserts')
@@ -65,7 +65,12 @@ menu.addDishtoCourse('mains', 'Veggie Burger', 5.00)
 menu.addDishtoCourse('desserts', 'Cheesecake', 3.40)
 menu.addDishtoCourse('appetizers', 'caviar', 2.50)
 
-console.log(menu.courses)
-console.log(menu.getRandomDishFromCourse('appetizers'))
-console.log(menu.getRandomDishFromCourse('desserts'))
+menu.addDishtoCourse('mains', 'enchilladas', 7.00)
+menu.addDishtoCourse('desserts', 'crème brûlée', 4.30)
+menu.addDishtoCourse('appetizers', 'gyoza', 4.50)
+menu.addDishtoCourse('mains', 'ramen', 7.00)
+menu.addDishtoCourse('desserts', 'ice cream', 3.70)
+menu.addDishtoCourse('appetizers', 'spicy edamame', 8.50)
+
+
 console.log(menu.generateRandomMeal())
