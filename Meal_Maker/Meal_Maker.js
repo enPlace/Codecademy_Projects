@@ -53,7 +53,8 @@ const menu = {
     Either way, you have to pay, and your total comes to $${totalPrice}.`
   
 
-} 
+}
+}; 
 
 
 
