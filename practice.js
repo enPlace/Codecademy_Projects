@@ -1,16 +1,11 @@
-class Surgeon {
-  constructor(name, department) {
+class HospitalEmployee {
+  constructor(name) {
     this._name = name;
-    this._department = department;
     this._remainingVacationDays = 20;
   }
   
   get name() {
     return this._name;
-  }
-  
-  get department() {
-    return this._department;
   }
   
   get remainingVacationDays() {
@@ -20,9 +15,6 @@ class Surgeon {
   takeVacationDays(daysOff) {
     this._remainingVacationDays -= daysOff;
   }
-}
+}; 
 
-const surgeonRomero = new Surgeon('Francisco Romero', 'Cardiovascular');
-const surgeonJackson = new Surgeon('Ruth Jackson', 'Orthopedics');
-console.log(surgeonRomero.takeVacationDays(3))
-console.log(surgeonRomero.remainingVacationDays)
+
