@@ -63,7 +63,24 @@ class CD extends Media{
 	constructor(artist, title){
 		super(title); 
 		this._artist = artist; 
+		this._songs = []
 		
+	}
+	get artist(){
+		return this._artist
+	}
+	get songs(){
+		return this._songs
+	}
+	set songs(value){
+		this._songs = value
+	}
+	addSongs(song){
+		if (Array.isArray(song)){
+			this.songs= [].concat(this.songs, song)
+		}else{
+		this.songs.push(song)
+		}
 	}
 
 }
@@ -86,3 +103,16 @@ speed.addRating(1)
 speed.addRating(1)
 speed.addRating(5)
 console.log(speed.getAverageRating())
+
+const spiderland = new CD('Slint', 'Spiderland')
+spiderland.addSongs('Breadcrumb Trail')
+spiderland.addSongs(['Nosferatu Man', 'Don, Aman'])
+spiderland.addSongs('Washer')
+spiderland.addSongs(['For Dinner ...', 'Good Morning, Captain'])
+console.log(spiderland.songs)
+spiderland.addRating(5)
+spiderland.addRating(4)
+spiderland.addRating(3)
+spiderland.addRating(5)
+spiderland.addRating(5)
+console.log(spiderland.getAverageRating())
