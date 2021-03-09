@@ -1,7 +1,7 @@
 class Media {
 	constructor(title){
-		this._title = title
-		this._isCheckedOut = false
+		this._title = title;
+		this._isCheckedOut = false;
 		this._ratings = []
 	}
 	get title(){
@@ -17,12 +17,13 @@ class Media {
 		this._isCheckedOut = boolean
 	}
 	toggleCheckedOutStatus (){
-		if (this._isCheckedOut ===true){
-			this._isCheckedOut = false;
+		this.isCheckedOut = !this.isCheckedOut
 		}
-		if (this._isCheckedOut === false){
-			this._isCheckedOut = true
-		}
+	
+	getAverageRating(){
+		let sumRating = this.ratings.reduce((accumulator, currentValue)=> accumulator+currentValue); 
+		return sumRating / this.ratings.length;
+
 	}
 }
 
@@ -32,6 +33,10 @@ class Book extends Media{
 	}
 }
 const Harry = new Book('Harry')
+console.log(Harry.isCheckedOut)
+Harry.toggleCheckedOutStatus()
+console.log(Harry.isCheckedOut)
+Harry.toggleCheckedOutStatus()
 console.log(Harry.isCheckedOut)
 Harry.toggleCheckedOutStatus()
 console.log(Harry.isCheckedOut)
