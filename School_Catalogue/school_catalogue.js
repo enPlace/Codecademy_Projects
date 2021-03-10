@@ -41,33 +41,53 @@ class School {
 		this._numberOfStudents = value
 	}
 	}
+	quickFacts(){
+		console.log(`${this.name} educates ${this.numberOfStudents} students at the ${this.level} school level.`)
+	}
 
-}
+};
+
 
 
 class Primary extends School{
-	constructor(name, level, numberOfStudents)
-	super(name);
-	super(level);
-	super(numberOfStudents)
-}
+	constructor(name, level, numberOfStudents){
+	super(name, level, numberOfStudents);}
+};
 class Middle extends School{
-	constructor(name, level, numberOfStudents)
-	super(name);
-	super(level);
-	super(numberOfStudents)
+	constructor(name, level, numberOfStudents){
+	super(name, level, numberOfStudents);}
 }
 class High extends School{
-	constructor(name, level, numberOfStudents)
-	super(name);
-	super(level);
-	super(numberOfStudents); 
+	constructor(name, level, numberOfStudents){
+	super(name, level, numberOfStudents); 
 	this._sportsTeams = []
+	}
+	get sportsTeams(){
+		return this._sportsTeams
+	}
+	set sportsTeams(value){
+		this._sportsTeams = value
+	}
+	addSportsTeams(sport){
+		if(Array.isArray(sport)){
+			this.sportsTeams = [].concat(this.sportsTeams, sport)
+		}else{
+			this.sportsTeams.push(sport)
+		}
+	}
 
 }
-const newschool = new School('Ham', 'primary', 1)
+const newschool = new Primary('Ham', 'primary', 1)
 console.log(newschool.level)
-newschool.level = 'middle'
+newschool.level = 'primary'
 console.log(newschool.level)
-newschool.numberOfStudents = 'test'
+newschool.numberOfStudents = 5
 console.log(newschool.numberOfStudents)
+newschool.quickFacts()
+
+const franklinHigh= new High('Franklin High School', 'high', 2000)
+franklinHigh.addSportsTeams('baseball')
+console.log(franklinHigh.sportsTeams)
+franklinHigh.addSportsTeams(['football', 'soccer', 'lacrosse', 'softball', 'volleyball'])
+console.log(franklinHigh.sportsTeams)
+franklinHigh.quickFacts()
